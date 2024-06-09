@@ -23,6 +23,48 @@ msgstr "Terms of Service"
 msgid "documentation.footer.privacy.policy"
 msgstr "Privacy Policy"
 
+# PAGE BAR
+msgid "documentation.page.bar.headline"
+msgstr "Taskwolf documentation"
+msgid "documentation.page.bar.version"
+msgstr "Version: 1.0.0"
+msgid "documentation.page.bar.overview"
+msgstr "Overview"
+msgid "documentation.page.bar.change.log"
+msgstr "Change log"
+msgid "documentation.page.bar.apps"
+msgstr "Apps"
+msgid "documentation.page.bar.webhooks"
+msgstr "Webhooks"
+msgid "documentation.page.bar.glossary"
+msgstr "Glossary"
+
 # OVERVIEW
 msgid "documentation.overview.title"
+msgstr "Overview - Taskwolf"
+msgid "documentation.overview.headline"
 msgstr "Overview"
+
+# CHANGE LOG
+msgid "documentation.change.log.title"
+msgstr "Change log - Taskwolf"
+msgid "documentation.change.log.headline"
+msgstr "Change log"
+
+# APPS
+msgid "documentation.apps.title"
+msgstr "Apps - Taskwolf"
+msgid "documentation.apps.headline"
+msgstr "Apps"
+
+# WEBHOOKS
+msgid "documentation.webhooks.title"
+msgstr "Webhooks - Taskwolf"
+msgid "documentation.webhooks.headline"
+msgstr "Webhooks"
+
+# GLOSSARY
+msgid "documentation.glossary.title"
+msgstr "Glossary - Taskwolf"
+msgid "documentation.glossary.headline"
+msgstr "Glossary"

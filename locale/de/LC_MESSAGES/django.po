@@ -23,6 +23,48 @@ msgstr "Nutzungsbedingungen"
 msgid "documentation.footer.privacy.policy"
 msgstr "Datenschutzerklärung"
 
+# PAGE BAR
+msgid "documentation.page.bar.headline"
+msgstr "Taskwolf Dokumentation"
+msgid "documentation.page.bar.version"
+msgstr "Version: 1.0.0"
+msgid "documentation.page.bar.overview"
+msgstr "Übersicht"
+msgid "documentation.page.bar.change.log"
+msgstr "Veränderungen"
+msgid "documentation.page.bar.apps"
+msgstr "Apps"
+msgid "documentation.page.bar.webhooks"
+msgstr "Webhooks"
+msgid "documentation.page.bar.glossary"
+msgstr "Glossar"
+
 # OVERVIEW
 msgid "documentation.overview.title"
+msgstr "Übersicht - Taskwolf"
+msgid "documentation.overview.headline"
 msgstr "Übersicht"
+
+# CHANGE LOG
+msgid "documentation.change.log.title"
+msgstr "Veränderungen - Taskwolf"
+msgid "documentation.change.log.headline"
+msgstr "Veränderungen"
+
+# APPS
+msgid "documentation.apps.title"
+msgstr "Apps - Taskwolf"
+msgid "documentation.apps.headline"
+msgstr "Apps"
+
+# WEBHOOKS
+msgid "documentation.webhooks.title"
+msgstr "Webhooks - Taskwolf"
+msgid "documentation.webhooks.headline"
+msgstr "Webhooks"
+
+# GLOSSARY
+msgid "documentation.glossary.title"
+msgstr "Glossar - Taskwolf"
+msgid "documentation.glossary.headline"
+msgstr "Glossar"
