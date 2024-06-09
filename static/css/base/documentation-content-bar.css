@@ -1,6 +1,6 @@
 #content-bar {
   position: fixed;
-  width: 260px !important;
+  width: 300px !important;
   height: calc(100% - 80px);
   right: 0;
   transition: 0s;
@@ -23,22 +23,13 @@
 }
 
 .content-bar-link {
-  display: flex !important;
-  align-items: center;
   font-size: 22px !important;
-}
-
-.content-bar-icon {
-  margin-left: 5%;
-  margin-right: 10%;
-  width: 35px;
-  height: 35px;
-  font-size:35px !important;
-  line-height:35px !important;
+  border-radius: 10px;
+  padding-left: 5% !important;
+  padding-right: 10% !important;
 }
 
 .content-bar-active {
-  border-radius: 10px;
   background-color: #666666;
 }
 
