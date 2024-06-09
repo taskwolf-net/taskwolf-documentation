@@ -24,12 +24,3 @@
     <h5 id="documentation-footer-copyright">© 2024 Taskwolf.net</h5>
   </div>
 </div>
-
-<script>
-  var windowHeight = window.innerHeight || document.documentElement.clientHeight ||
-    document.body.clientHeight;
-  var sidebarInfluencedHeight = document.getElementsByClassName("sidebar-influenced")[0].offsetHeight;
-  var footerHeight = document.getElementById("documentation-footer").offsetHeight;
-  var offset = Math.max(0, windowHeight - 80 - sidebarInfluencedHeight + footerHeight);
-  document.getElementById("documentation-footer").style.marginTop = offset + "px";
-</script>

@@ -39,11 +39,25 @@ msgstr "Webhooks"
 msgid "documentation.page.bar.glossary"
 msgstr "Glossary"
 
+# CONTENT BAR
+msgid "documentation.content.bar.headline"
+msgstr "Table of content"
+
 # OVERVIEW
 msgid "documentation.overview.title"
 msgstr "Overview - Taskwolf"
 msgid "documentation.overview.headline"
 msgstr "Overview"
+msgid "documentation.overview.pages.headline"
+msgstr "Pages"
+msgid "documentation.overview.pages.1"
+msgstr "Below is a brief overview of the content covered by this documentation. "
+msgid "documentation.overview.introduction.headline"
+msgstr "Introduction"
+msgid "documentation.overview.introduction.1"
+msgstr "This is the official documentation of Taskwolf. This documentation covers the most important components of the product and explains how they work in detail."
+msgid "documentation.overview.introduction.2"
+msgstr "The documentation could be particularly interesting for developers who want to integrate Taskwolf into their products. The documentation should make integration very easy for them."
 
 # CHANGE LOG
 msgid "documentation.change.log.title"

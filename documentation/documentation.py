@@ -23,28 +23,33 @@ def applyLanguage(request):
 async def overview(request):
   return render(request, 'overview.html', {'title': gettext("documentation.overview.title"),
     'css': ['css/base/documentation-header.css', 'css/base/documentation-footer.css',
-      'css/base/documentation-page-bar.css', 'css/documentation/overview.css']})
+      'css/base/documentation-page-bar.css', 'css/base/documentation-content-bar.css',
+      'css/documentation/overview.css']})
 
 @documentation_page
 async def changeLog(request):
   return render(request, 'change-log.html', {'title': gettext("documentation.change.log.title"),
     'css': ['css/base/documentation-header.css', 'css/base/documentation-footer.css',
-      'css/base/documentation-page-bar.css', 'css/documentation/change-log.css']})
+      'css/base/documentation-page-bar.css', 'css/base/documentation-content-bar.css',
+      'css/documentation/change-log.css']})
 
 @documentation_page
 async def apps(request):
   return render(request, 'apps.html', {'title': gettext("documentation.apps.title"),
     'css': ['css/base/documentation-header.css', 'css/base/documentation-footer.css',
-      'css/base/documentation-page-bar.css', 'css/documentation/apps.css']})
+      'css/base/documentation-page-bar.css', 'css/base/documentation-content-bar.css',
+       'css/documentation/apps.css']})
 
 @documentation_page
 async def webhooks(request):
   return render(request, 'webhooks.html', {'title': gettext("documentation.webhooks.title"),
     'css': ['css/base/documentation-header.css', 'css/base/documentation-footer.css',
-      'css/base/documentation-page-bar.css', 'css/documentation/webhooks.css']})
+      'css/base/documentation-page-bar.css', 'css/base/documentation-content-bar.css',
+      'css/documentation/webhooks.css']})
 
 @documentation_page
 async def glossary(request):
   return render(request, 'glossary.html', {'title': gettext("documentation.glossary.title"),
     'css': ['css/base/documentation-header.css', 'css/base/documentation-footer.css',
-      'css/base/documentation-page-bar.css', 'css/documentation/glossary.css']})
+      'css/base/documentation-page-bar.css', 'css/base/documentation-content-bar.css',
+      'css/documentation/glossary.css']})

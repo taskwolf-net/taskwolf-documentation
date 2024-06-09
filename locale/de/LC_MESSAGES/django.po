@@ -39,11 +39,17 @@ msgstr "Webhooks"
 msgid "documentation.page.bar.glossary"
 msgstr "Glossar"
 
+# CONTENT BAR
+msgid "documentation.content.bar.headline"
+msgstr "Inhaltsverzeichnis"
+
 # OVERVIEW
 msgid "documentation.overview.title"
 msgstr "Übersicht - Taskwolf"
 msgid "documentation.overview.headline"
 msgstr "Übersicht"
+msgid "documentation.overview.pages.headline"
+msgstr "Seiten"
 
 # CHANGE LOG
 msgid "documentation.change.log.title"

@@ -1,0 +1,49 @@
+{% load static %}
+{% load i18n %}
+<div class="collapse collapse-horizontal" id="content-bar">
+  <div id="content-bar-content">
+    <ul id="content-bar-entries" class="navbar-nav ml-auto h-100 d-flex align-items-center">
+      <li class="mt-3">
+        <p class="text-center text-secondary mb-0">{% trans 'documentation.content.bar.headline' %}</p>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<script>
+  var elementAssignment = [];
+
+  window.addEventListener("load", function() {
+    var entries = document.getElementsByClassName("documentation-section");
+    for (var i = 0; i < entries.length; i++) {
+      let entry = entries[i];
+      var entryElement = document.createElement("li");
+      var entryLinkElement = document.createElement("a");
+      entryLinkElement.innerText = entry.getElementsByClassName("documentation-section-headline")[0].innerText;
+      entryLinkElement.classList.add("mt-3");
+      entryLinkElement.onclick = function (event) {
+        var elementPosition = entry.getBoundingClientRect().top;
+        var offsetPosition = elementPosition + window.scrollY - 120;
+        window.scrollTo({top: offsetPosition, behavior: "smooth"});
+      }
+      entryElement.appendChild(entryLinkElement);
+      document.getElementById("content-bar-entries").appendChild(entryElement);
+      elementAssignment.push(entryLinkElement);
+    }
+  });
+
+  window.addEventListener("scroll", () => {
+    var entries = document.getElementsByClassName("documentation-section");
+    for (var i = entries.length - 1; i >= 0; i--) {
+      elementAssignment[i].classList.remove("text-danger");
+    }
+    for (var i = 0; i < entries.length; i++) {
+      let entry = entries[i];
+      var bottom_of_object = entry.getBoundingClientRect().top - window.screen.height / 8 + entry.getBoundingClientRect().height;
+      if (bottom_of_object > 0) {
+        elementAssignment[i].classList.add("text-danger");
+        break;
+      }
+    }
+  });
+</script>

@@ -1,20 +1,14 @@
 {% load static %}
 {% load i18n %}
-<nav class="navbar navbar-expand-sm" id="navbar">
-  <div class="container-fluid">
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-content"
-            aria-controls="navbar-content" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbar-content">
-      <div id="navbar-logo"><a href="/"><img class="nav-link" src="{% static 'img/logo.png' %}" width="70px" height="70px" alt=""></a></div>
-      <div id="documentation-languages">
-        <input id="documentation-language-en" class="documentation-language-flag" src="{% static 'img/languages/en.png' %}" type="image"/>
-        <input id="documentation-language-de" class="documentation-language-flag" src="{% static 'img/languages/de.png' %}" type="image"/>
-      </div>
+<nav id="navbar">
+  <button id="page-bar-button" type="button" data-bs-toggle="collapse" data-bs-target="#page-bar" aria-expanded="false" aria-controls="page-bar"></button>
+  <div id="navbar-content">
+    <div id="documentation-languages">
+      <input id="documentation-language-en" class="documentation-language-flag" src="{% static 'img/languages/en.png' %}" type="image"/>
+      <input id="documentation-language-de" class="documentation-language-flag" src="{% static 'img/languages/de.png' %}" type="image"/>
     </div>
   </div>
+  <button id="content-bar-button" type="button" data-bs-toggle="collapse" data-bs-target="#content-bar" aria-expanded="false" aria-controls="content-bar"></button>
 </nav>
 <div id="header-space"></div>
 
@@ -27,5 +21,91 @@
   document.getElementById("documentation-language-de").onclick = function (event) {
     Cookie.create("taskwolf-documentation-language", "de", 60 * 60 * 24 * 365, ".taskwolf.net");
     window.location.reload();
+  }
+</script>
+
+<script>
+  var isPageBarShown;
+
+  window.addEventListener("load", function() {
+    if (sessionStorage.getItem("taskwolf-documentation-page-bar") === null) {
+      sessionStorage.setItem("taskwolf-documentation-page-bar", "true");
+    }
+    var pageBarSetting = sessionStorage.getItem("taskwolf-documentation-page-bar").toLowerCase() === "true";
+    isPageBarShown = window.innerWidth > 575 && pageBarSetting;
+    if (isPageBarShown) {
+      document.getElementById("page-bar").classList.add("show");
+    }
+    updatePageBarSpacing();
+    updatePageBarButtonIcon();
+  });
+
+  document.getElementById('page-bar-button').onclick = function() {
+    isPageBarShown = !isPageBarShown;
+    sessionStorage.setItem("taskwolf-documentation-page-bar", isPageBarShown);
+    updatePageBarSpacing();
+    updatePageBarButtonIcon();
+  };
+
+  function updatePageBarSpacing() {
+    var elements = document.getElementsByClassName('sidebar-influenced');
+    for (var i = 0; i < elements.length; i++) {
+      if (isPageBarShown && window.innerWidth > 800) {
+        elements[i].style.marginLeft = '300px';
+      } else {
+        elements[i].style.marginLeft = '0';
+      }
+    }
+  }
+
+  function updatePageBarButtonIcon() {
+    if (isPageBarShown) {
+      document.getElementById("page-bar-button").innerHTML ='<i class="fa-solid fa-xmark"></i>';
+      return;
+    }
+    document.getElementById("page-bar-button").innerHTML ='<i class="fa-solid fa-bars"></i>';
+  }
+</script>
+
+<script>
+  var isContentBarShown;
+
+  window.addEventListener("load", function() {
+    if (sessionStorage.getItem("taskwolf-documentation-content-bar") === null) {
+      sessionStorage.setItem("taskwolf-documentation-content-bar", "true");
+    }
+    var contentBarSetting = sessionStorage.getItem("taskwolf-documentation-content-bar").toLowerCase() === "true";
+    isContentBarShown = window.innerWidth > 575 && contentBarSetting;
+    if (isContentBarShown) {
+      document.getElementById("content-bar").classList.add("show");
+    }
+    updateContentBarSpacing();
+    updateContentBarButtonIcon();
+  });
+
+  document.getElementById('content-bar-button').onclick = function() {
+    isContentBarShown = !isContentBarShown;
+    sessionStorage.setItem("taskwolf-documentation-content-bar", isContentBarShown);
+    updateContentBarSpacing();
+    updateContentBarButtonIcon();
+  };
+
+  function updateContentBarSpacing() {
+    var elements = document.getElementsByClassName('sidebar-influenced');
+    for (var i = 0; i < elements.length; i++) {
+      if (isContentBarShown && window.innerWidth > 800) {
+        elements[i].style.marginRight = '300px';
+      } else {
+        elements[i].style.marginRight = '0';
+      }
+    }
+  }
+
+  function updateContentBarButtonIcon() {
+    if (isContentBarShown) {
+      document.getElementById("content-bar-button").innerHTML ='<i class="fa-solid fa-xmark"></i>';
+      return;
+    }
+    document.getElementById("content-bar-button").innerHTML ='<i class="fa-solid fa-bars"></i>';
   }
 </script>

@@ -84,3 +84,12 @@ h1 {
 .cookie-banner-container {
   text-align: left !important;
 }
+
+.documentation-page {
+  width: min(1000px, 95%);
+  margin: auto;
+}
+
+.documentation-section {
+  margin-bottom: 10%;
+}
