@@ -17,10 +17,19 @@
       </div>
       <div class="documentation-footer-row">
         <h4 class="documentation-footer-row-headline">{% trans 'documentation.footer.legal' %}</h4>
-        <a href="/imprint/">{% trans 'documentation.footer.imprint' %}</a><br>
-        <a href="/privacy-policy/">{% trans 'documentation.footer.privacy.policy' %}</a><br>
+        <a href="https://taskwolf.net/imprint/">{% trans 'documentation.footer.imprint' %}</a><br>
+        <a href="https://taskwolf.net/privacy-policy/">{% trans 'documentation.footer.privacy.policy' %}</a><br>
       </div>
     </div>
     <h5 id="documentation-footer-copyright">© 2024 Taskwolf.net</h5>
   </div>
 </div>
+
+<script>
+  var windowHeight = window.innerHeight || document.documentElement.clientHeight ||
+    document.body.clientHeight;
+  var sidebarInfluencedHeight = document.getElementsByClassName("sidebar-influenced")[0].offsetHeight;
+  var footerHeight = document.getElementById("documentation-footer").offsetHeight;
+  var offset = Math.max(0, windowHeight - 80 - sidebarInfluencedHeight + footerHeight);
+  document.getElementById("documentation-footer").style.marginTop = offset + "px";
+</script>
