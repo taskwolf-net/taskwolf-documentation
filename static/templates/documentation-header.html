@@ -94,7 +94,7 @@
     var elements = document.getElementsByClassName('sidebar-influenced');
     for (var i = 0; i < elements.length; i++) {
       if (isContentBarShown && window.innerWidth > 800) {
-        elements[i].style.marginRight = '300px';
+        elements[i].style.marginRight = '260px';
       } else {
         elements[i].style.marginRight = '0';
       }
@@ -108,4 +108,24 @@
     }
     document.getElementById("content-bar-button").innerHTML ='<i class="fa-solid fa-bars"></i>';
   }
+</script>
+
+<script>
+  window.addEventListener("scroll", () => {
+    var element = document.getElementById("documentation-footer")
+    var elementTop = element.getBoundingClientRect().top;
+    var windowHeight = window.innerHeight || document.documentElement.clientHeight ||
+      document.body.clientHeight;
+    var scrollEnabled = windowHeight >= elementTop;
+    document.getElementById("page-bar").classList.toggle("position-absolute", scrollEnabled);
+    document.getElementById("content-bar").classList.toggle("position-absolute", scrollEnabled);
+    if (scrollEnabled) {
+      var scrollOffset = elementTop + window.scrollY - windowHeight;
+      document.getElementById("page-bar").style.marginTop = scrollOffset + "px";
+      document.getElementById("content-bar").style.marginTop = scrollOffset + "px";
+    } else {
+      document.getElementById("page-bar").style.marginTop = "0";
+      document.getElementById("content-bar").style.marginTop = "0";
+    }
+  });
 </script>

@@ -88,6 +88,7 @@ h1 {
 .documentation-page {
   width: min(1000px, 95%);
   margin: auto;
+  margin-bottom: 50%;
 }
 
 .documentation-section {

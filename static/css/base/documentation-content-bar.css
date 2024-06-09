@@ -1,6 +1,6 @@
 #content-bar {
   position: fixed;
-  width: 300px !important;
+  width: 260px !important;
   height: calc(100% - 80px);
   right: 0;
   transition: 0s;

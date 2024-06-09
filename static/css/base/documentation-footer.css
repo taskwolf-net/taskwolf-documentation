@@ -1,6 +1,8 @@
 #documentation-footer {
   background-image: linear-gradient(to top left, #586882, #232d3e);
-  margin-top: 20%;
+  position: absolute;
+  width: 100%;
+  z-index: 100;
 }
 
 #documentation-footer-content {
