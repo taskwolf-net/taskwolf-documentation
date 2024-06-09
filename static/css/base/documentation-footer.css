@@ -1,0 +1,127 @@
+#documentation-footer {
+  background-image: linear-gradient(to top left, #586882, #232d3e);
+}
+
+#documentation-footer-content {
+  width: 100%;
+  padding-top: 2%;
+  padding-bottom: 1%;
+}
+
+#documentation-footer-content-links {
+  width: min(1750px, 95%);
+  display: flex;
+  justify-content: center;
+  gap: calc(60% / 2);
+  margin: auto;
+}
+
+#documentation-footer-logo {
+  width: calc(40% / 3);
+  align-self: center;
+}
+
+.documentation-footer-row {
+  width: calc(40% / 3);
+  display: block;
+  text-align: center;
+}
+
+.documentation-footer-row-headline {
+  text-align: center;
+  font-weight: bold;
+}
+
+.documentation-footer-row a {
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  display: inline-block;
+  width: 100%;
+}
+
+.documentation-footer-row a:hover {
+  color: #c8c8c8;
+}
+
+.documentation-footer-row h4 {
+  margin-bottom: 20px !important;
+}
+
+#documentation-footer-social-media {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 20px;
+  row-gap: 20px;
+  margin-top: 40px;
+  text-align: center;
+}
+
+#documentation-footer-social-media li {
+  font-size: 28px;
+  border-radius: 50%;
+  background-color: white;
+  color: black;
+  width: calc(100%);
+  aspect-ratio: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#documentation-footer-social-media li:hover {
+  background-color: #cecece;
+}
+
+#documentation-footer-contact {
+  width: 100%;
+}
+
+#documentation-footer-copyright {
+  text-align: center;
+  margin-top: 2%;
+}
+
+@media (max-width: 1300px) {
+  #documentation-footer-content-links {
+    gap: calc(40% / 2);
+  }
+
+  .documentation-footer-row {
+    width: calc(60% / 3);
+  }
+
+  #documentation-footer-logo {
+    width: calc(60% / 3);
+  }
+}
+
+@media (max-width: 800px) {
+  #documentation-footer-content-links {
+    display: block;
+  }
+
+  #documentation-footer-logo {
+    display: none;
+  }
+
+  .documentation-footer-row {
+    width: 100%;
+    margin-bottom: 10%;
+  }
+
+  #documentation-footer-social-media {
+    width: min(200px, 100%);
+    margin: auto;
+  }
+
+  #documentation-footer-contact {
+    width: fit-content;
+    margin: auto;
+  }
+}

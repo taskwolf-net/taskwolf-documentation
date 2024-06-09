@@ -1,0 +1,49 @@
+.loader {
+  font-size: 11px;
+  animation: escaleY 1s infinite ease-in-out;
+  width: 1em;
+  height: 4em;
+  animation-delay: -0.16s;
+  position: relative;
+  margin-left: 50%;
+  margin-top: calc(50vh - 80px + 2em);
+}
+
+.loader {
+  color: #cccccc;
+  background: #cccccc;
+}
+
+.loader-list {
+  margin-top: 200px;
+}
+
+.loader:before, .loader:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 2em;
+  width: 1em;
+  height: 4em;
+  animation: escaleY 1s infinite ease-in-out;
+}
+
+.loader:before, .loader:after {
+  background: #cccccc;
+}
+
+.loader:before {
+  left: -2em;
+  animation-delay: -0.32s;
+}
+
+@keyframes escaleY {
+  0%, 80%, 100% {
+    box-shadow: 0 0;
+    height: 4em;
+  }
+  40% {
+    box-shadow: 0 -2em;
+    height: 5em;
+  }
+}

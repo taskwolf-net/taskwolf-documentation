@@ -1,0 +1,28 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+# DOCUMENTATION
+
+# FOOTER
+msgid "documentation.footer.social.media"
+msgstr "SOZIALE MEDIEN"
+msgid "documentation.footer.help"
+msgstr "HILFE"
+msgid "documentation.footer.documentation"
+msgstr "Dokumentation"
+msgid "documentation.footer.contact"
+msgstr "Kontakt"
+msgid "documentation.footer.legal"
+msgstr "RECHTLICHES"
+msgid "documentation.footer.imprint"
+msgstr "Impressum"
+msgid "documentation.footer.terms.of.service"
+msgstr "Nutzungsbedingungen"
+msgid "documentation.footer.privacy.policy"
+msgstr "Datenschutzerklärung"
+
+# OVERVIEW
+msgid "documentation.overview.title"
+msgstr "Übersicht"

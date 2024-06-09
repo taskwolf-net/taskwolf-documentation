@@ -1,0 +1,26 @@
+{% load static %}
+{% load i18n %}
+<div id="documentation-footer">
+  <div id="documentation-footer-content">
+    <div id="documentation-footer-content-links">
+      <img id="documentation-footer-logo" src="{% static 'img/logo.png' %}" alt="">
+      <div class="documentation-footer-row">
+        <h4 class="documentation-footer-row-headline">{% trans 'documentation.footer.social.media' %}</h4>
+        <ul id="documentation-footer-social-media">
+          <li onclick="location.href='https://taskwolf.net/'"><i class="fa-brands fa-youtube"></i></li>
+          <li onclick="location.href='https://taskwolf.net/'"><i class="fa-brands fa-x-twitter"></i></li>
+          <li onclick="location.href='https://www.instagram.com/taskwolfnet'"><i class="fa-brands fa-instagram"></i></li>
+          <li onclick="location.href='https://taskwolf.net/'"><i class="fa-brands fa-linkedin-in"></i></li>
+          <li onclick="location.href='https://taskwolf.net/'"><i class="fa-brands fa-facebook"></i></li>
+          <li onclick="location.href='https://taskwolf.net/'"><i class="fa-brands fa-github"></i></li>
+        </ul>
+      </div>
+      <div class="documentation-footer-row">
+        <h4 class="documentation-footer-row-headline">{% trans 'documentation.footer.legal' %}</h4>
+        <a href="/imprint/">{% trans 'documentation.footer.imprint' %}</a><br>
+        <a href="/privacy-policy/">{% trans 'documentation.footer.privacy.policy' %}</a><br>
+      </div>
+    </div>
+    <h5 id="documentation-footer-copyright">© 2024 Taskwolf.net</h5>
+  </div>
+</div>

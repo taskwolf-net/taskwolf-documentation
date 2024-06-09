@@ -1,0 +1,31 @@
+{% load static %}
+{% load i18n %}
+<nav class="navbar navbar-expand-sm" id="navbar">
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-content"
+            aria-controls="navbar-content" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbar-content">
+      <div id="navbar-logo"><a href="/"><img class="nav-link" src="{% static 'img/logo.png' %}" width="70px" height="70px" alt=""></a></div>
+      <div id="documentation-languages">
+        <input id="documentation-language-en" class="documentation-language-flag" src="{% static 'img/languages/en.png' %}" type="image"/>
+        <input id="documentation-language-de" class="documentation-language-flag" src="{% static 'img/languages/de.png' %}" type="image"/>
+      </div>
+    </div>
+  </div>
+</nav>
+<div id="header-space"></div>
+
+<script>
+  document.getElementById("documentation-language-en").onclick = function (event) {
+    Cookie.create("taskwolf-documentation-language", "en", 60 * 60 * 24 * 365, ".taskwolf.net");
+    window.location.reload();
+  }
+
+  document.getElementById("documentation-language-de").onclick = function (event) {
+    Cookie.create("taskwolf-documentation-language", "de", 60 * 60 * 24 * 365, ".taskwolf.net");
+    window.location.reload();
+  }
+</script>
