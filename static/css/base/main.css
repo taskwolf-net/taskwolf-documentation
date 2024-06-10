@@ -85,9 +85,17 @@ h1 {
   text-align: left !important;
 }
 
+.sidebar-influenced {
+  margin-right: 250px;
+}
+
 .documentation-page {
-  width: min(1000px, 95%);
+  width: min(1000px, 90%);
   margin: auto;
+}
+
+.documentation-page a {
+  text-decoration: none;
 }
 
 .documentation-section {

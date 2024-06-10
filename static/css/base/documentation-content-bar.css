@@ -1,21 +1,21 @@
 #content-bar {
   position: fixed;
-  width: 300px !important;
+  width: 250px !important;
   height: calc(100% - 80px);
   right: 0;
   transition: 0s;
   z-index: 90;
   overflow-y: auto;
   color: white;
-  background-color: #212529;
-  border-left: 1px #4a4a4a solid;
 }
 
 .content-bar-item {
-  width: 90%;
+  width: 95%;
   border-radius: 10px;
   transition-duration: 250ms;
   user-select: none;
+  margin-left: 0;
+  margin-right: auto;
 }
 
 .content-bar-item:hover {

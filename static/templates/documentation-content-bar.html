@@ -1,6 +1,6 @@
 {% load static %}
 {% load i18n %}
-<div class="collapse collapse-horizontal" id="content-bar">
+<div id="content-bar">
   <div id="content-bar-content">
     <ul id="content-bar-entries" class="navbar-nav ml-auto h-100 d-flex align-items-center">
       <li class="mt-4 mb-2">
@@ -18,7 +18,7 @@
     for (var i = 0; i < entries.length; i++) {
       let entry = entries[i];
       var entryElement = document.createElement("li");
-      entryElement.classList.add("mt-2", "content-bar-item");
+      entryElement.classList.add("mt-1", "content-bar-item");
       var entryLinkElement = document.createElement("a");
       entryLinkElement.innerText = entry.getElementsByClassName("documentation-section-headline")[0].innerText;
       entryLinkElement.classList.add("content-bar-link", "nav-link");
@@ -48,8 +48,9 @@
       var bottom_of_object = entry.getBoundingClientRect().top - window.screen.height / 8 + entry.getBoundingClientRect().height;
       if (bottom_of_object > 0) {
         elementAssignment[i].classList.add("content-bar-active");
-        break;
+        return;
       }
     }
+    elementAssignment[elementAssignment.length - 1].classList.add("content-bar-active");
   }
 </script>
