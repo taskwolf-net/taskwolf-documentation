@@ -111,6 +111,17 @@
 </script>
 
 <script>
+  window.addEventListener("load", function() {
+    var windowHeight = window.innerHeight || document.documentElement.clientHeight ||
+      document.body.clientHeight;
+    var content = document.getElementsByClassName("sidebar-influenced")[0];
+    var contentBottom = content.getBoundingClientRect().bottom + window.scrollY;
+    var margin = Math.max(0, windowHeight - contentBottom);
+    content.style.marginBottom = "calc(" + margin + "px + 20%)";
+  });
+</script>
+
+<script>
   window.addEventListener("scroll", () => {
     var element = document.getElementById("documentation-footer")
     var elementTop = element.getBoundingClientRect().top;
