@@ -7,8 +7,8 @@
 
 #documentation-footer-content {
   width: 100%;
-  padding-top: 4%;
-  padding-bottom: 2%;
+  padding-top: 80px;
+  padding-bottom: 20px;
 }
 
 #documentation-footer-content-links {
@@ -17,6 +17,7 @@
   justify-content: center;
   gap: calc(60% / 2);
   margin: auto;
+  margin-bottom: 60px;
 }
 
 #documentation-footer-logo {

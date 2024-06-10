@@ -72,7 +72,7 @@
       document.body.clientHeight;
     var content = document.getElementsByClassName("sidebar-influenced")[0];
     var contentBottom = content.getBoundingClientRect().bottom + window.scrollY;
-    var margin = Math.max(384, windowHeight - contentBottom);
+    var margin = Math.max(windowHeight / 2, windowHeight - contentBottom);
     content.style.marginBottom = margin + "px";
   });
 </script>
