@@ -96,8 +96,14 @@ h1 {
 
 .documentation-page a {
   text-decoration: none;
+  color: #7d7dff;
 }
+
 
 .documentation-section {
   margin-bottom: 10%;
+}
+
+.documentation-section-headline {
+  font-weight: bold;
 }
