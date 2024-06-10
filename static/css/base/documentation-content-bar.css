@@ -1,7 +1,6 @@
 #content-bar {
   position: fixed;
   width: 250px !important;
-  height: calc(100% - 80px);
   right: 0;
   transition: 0s;
   z-index: 90;
@@ -45,5 +44,11 @@
 
   .content-bar-icon {
     font-size: 28px;
+  }
+}
+
+@media(max-width: 700px) {
+  #content-bar {
+    display: none;
   }
 }

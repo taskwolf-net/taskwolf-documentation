@@ -79,17 +79,24 @@
 
 <script>
   window.addEventListener("scroll", () => {
-    var element = document.getElementById("documentation-footer")
-    var elementTop = element.getBoundingClientRect().top;
+    var footer = document.getElementById("documentation-footer");
+    var footerTop = footer.getBoundingClientRect().top;
     var windowHeight = window.innerHeight || document.documentElement.clientHeight ||
       document.body.clientHeight;
-    var scrollEnabled = windowHeight >= elementTop;
-    document.getElementById("page-bar").classList.toggle("position-absolute", scrollEnabled);
-    if (scrollEnabled) {
-      var scrollOffset = elementTop + window.scrollY - windowHeight;
-      document.getElementById("page-bar").style.marginTop = scrollOffset + "px";
+    var pageScrollEnabled = windowHeight >= footerTop;
+    document.getElementById("page-bar").classList.toggle("position-absolute", pageScrollEnabled);
+    if (pageScrollEnabled) {
+      var pageScrollOffset = footerTop + window.scrollY - windowHeight;
+      document.getElementById("page-bar").style.marginTop = pageScrollOffset + "px";
     } else {
       document.getElementById("page-bar").style.marginTop = "0";
+    }
+    var contentBarBottom = document.getElementById("content-bar").getBoundingClientRect().height + 80;
+    var contentScrollEnabled = footerTop <= contentBarBottom + 20;
+    if (contentScrollEnabled) {
+      document.getElementById("content-bar").style.top = (footerTop - document.getElementById("content-bar").getBoundingClientRect().height - 20) + "px";
+    } else {
+      document.getElementById("content-bar").style.top = "80px";
     }
   });
 </script>
