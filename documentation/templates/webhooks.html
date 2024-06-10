@@ -9,7 +9,26 @@
     <div class="sidebar-influenced">
       <div class="documentation-page">
         <h1 class="text-center fw-bold mt-5">{% trans 'documentation.webhooks.headline' %}</h1>
+        <div class="documentation-section">
+          <h2 class="documentation-section-headline">{% trans 'documentation.webhooks.introduction.headline' %}</h2>
+          <p>{% trans 'documentation.webhooks.introduction.description.1' %}</p>
+          <p>{% trans 'documentation.webhooks.introduction.description.2' %}</p>
+        </div>
+        <div class="documentation-section">
+          <h2 class="documentation-section-headline">{% trans 'documentation.webhooks.trigger.headline' %}</h2>
+          <p>{% trans 'documentation.webhooks.trigger.description.1' %}</p>
+          <p class="mb-0">{% trans 'documentation.webhooks.trigger.description.2' %}</p>
+          <img src="{% static 'img/webhook/1.png' %}" width="100%" class="mt-4 mb-4 border border-dark rounded" alt="">
+          <p class="mb-0">{% trans 'documentation.webhooks.trigger.description.3' %}</p>
+          <img src="{% static 'img/webhook/2.png' %}" width="100%" class="mt-4 mb-4 border border-dark rounded" alt="">
+          <p class="mb-0">{% trans 'documentation.webhooks.trigger.description.4' %}</p>
+          <img src="{% static 'img/webhook/3.png' %}" width="100%" class="mt-4 mb-4 border border-dark rounded" alt="">
+        </div>
+        <div class="documentation-section">
+          <h2 class="documentation-section-headline">{% trans 'documentation.webhooks.action.headline' %}</h2>
+        </div>
       </div>
     </div>
+    {% include 'templates/documentation-footer.html' %}
   </body>
 </html>
