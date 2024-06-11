@@ -99,11 +99,19 @@ h1 {
   color: #7d7dff;
 }
 
-
 .documentation-section {
   margin-bottom: 10%;
 }
 
 .documentation-section-headline {
   font-weight: bold;
+}
+
+.documentation-code {
+  background-color: #000000;
+  border: 1px solid #3a3a3a;
+  border-radius: 10px;
+  padding: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
