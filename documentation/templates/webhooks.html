@@ -27,13 +27,15 @@
           <img src="{% static 'img/webhook/4.png' %}" width="100%" class="mt-4 mb-4 border border-dark border-2 rounded" alt="">
           <p>{% trans 'documentation.webhooks.trigger.description.6' %}</p>
           <p class="mb-0">{% trans 'documentation.webhooks.trigger.description.7' %}</p>
-          <div class="documentation-code mt-3 mb-3">
+          <div class="documentation-code mt-5 mb-5">
+            <button id="webhook-trigger-request-copy" class="documentation-code-copy"><i class="fa-solid fa-copy"></i></button>
             <label class="me-4">POST</label><label>https://api.taskwolf.net/v1/webhook/trigger/</label><label class="text-warning">&lt;ID&gt;</label><label>/</label><label class="ms-4 text-secondary">HTTP/1.1</label><br><br>
             <label class="text-info">Authorization:</label> <label>Bearer</label> <label class="text-warning">&lt;Key&gt;</label><br><br>
             <label class="text-warning">&lt;Payload&gt;</label>
           </div>
           <p class="mb-0">{% trans 'documentation.webhooks.trigger.description.8' %}</p>
-          <div class="documentation-code mt-3 mb-3">
+          <div class="documentation-code mt-5 mb-5">
+            <button id="webhook-trigger-example-copy" class="documentation-code-copy"><i class="fa-solid fa-copy"></i></button>
             <label class="me-4">POST</label><label>https://api.taskwolf.net/v1/webhook/trigger/pnrufmqxqcbcbrvlkcuhijsurnvchqxl/</label><label class="ms-4 text-secondary">HTTP/1.1</label><br><br>
             <label class="text-info">Authorization:</label> <label>Bearer hutrykovffljukxeabtipbjsltkoaaua</label><br>
             <label class="text-info">Content-Type:</label> <label>text/plain</label><br><br>
@@ -68,3 +70,13 @@
     {% include 'templates/documentation-footer.html' %}
   </body>
 </html>
+
+<script>
+  document.getElementById("webhook-trigger-request-copy").onclick = function(event) {
+    navigator.clipboard.writeText('curl -X POST -H "Authorization: Bearer <Key>" -d "<Payload>" https://api.taskwolf.net/v1/webhook/trigger/<ID>/');
+  }
+
+  document.getElementById("webhook-trigger-example-copy").onclick = function(event) {
+    navigator.clipboard.writeText('curl -X POST -H "Authorization: Bearer hutrykovffljukxeabtipbjsltkoaaua" -H "Content-Type: text/plain" -d "Some information" https://api.taskwolf.net/v1/webhook/trigger/pnrufmqxqcbcbrvlkcuhijsurnvchqxl/');
+  }
+</script>

@@ -108,10 +108,25 @@ h1 {
 }
 
 .documentation-code {
+  position: relative;
   background-color: #000000;
   border: 1px solid #3a3a3a;
   border-radius: 10px;
   padding: 20px;
-  margin-top: 20px;
-  margin-bottom: 20px;
+}
+
+.documentation-code-copy {
+  position: absolute;
+  color: white;
+  background-color: #272727;
+  right: 20px;
+  width: 42px;
+  height: 42px;
+  border-radius: 5px;
+  border: none;
+  font-size: 20px;
+}
+
+.documentation-code-copy:hover {
+  background-color: #383838;
 }
