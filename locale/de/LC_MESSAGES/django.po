@@ -100,6 +100,12 @@ msgid "documentation.apps.title"
 msgstr "Apps - Taskwolf"
 msgid "documentation.apps.headline"
 msgstr "Apps"
+msgid "documentation.apps.list.headline"
+msgstr "Liste"
+msgid "documentation.apps.list.description"
+msgstr "Hier finden Sie eine Liste aller Apps, die wir bereits in unser Produkt integriert und automatisiert haben. Suchen Sie einfach nach einer App, die Ihnen gefällt."
+msgid "documentation.apps.search"
+msgstr "Suche nach App..."
 
 # WEBHOOKS
 msgid "documentation.webhooks.title"

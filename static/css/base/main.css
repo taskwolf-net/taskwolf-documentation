@@ -89,6 +89,12 @@ h1 {
   margin-right: 250px;
 }
 
+@media(max-width: 700px) {
+  .sidebar-influenced {
+    margin-right: 0;
+  }
+}
+
 .documentation-page {
   width: min(1000px, 90%);
   margin: auto;

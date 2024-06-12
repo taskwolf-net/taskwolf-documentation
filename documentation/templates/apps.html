@@ -8,8 +8,79 @@
     {% include 'templates/documentation-content-bar.html' %}
     <div class="sidebar-influenced">
       <div class="documentation-page">
-        <h1 class="text-center fw-bold mt-5">{% trans 'documentation.apps.headline' %}</h1>
+        <h1 class="text-center fw-bold mt-5 mb-5">{% trans 'documentation.apps.headline' %}</h1>
+        <div class="documentation-section">
+          <h2 class="documentation-section-headline">{% trans 'documentation.apps.list.headline' %}</h2>
+          <p>{% trans 'documentation.apps.list.description' %}</p>
+          <div id="apps-search-box" class="mt-5 mb-5">
+            <input id="apps-search-input" placeholder="{% trans 'documentation.apps.search' %}" type="text" class="form-control" value="" autocomplete="off">
+            <button type="button">
+              <i class="fa fa-search"></i>
+            </button>
+          </div>
+          <ul id="apps-list">
+          </ul>
+        </div>
       </div>
     </div>
+    {% include 'templates/documentation-footer.html' %}
   </body>
 </html>
+
+<script>
+  var apps;
+  var appsCurrentNameFilter = "";
+
+  $(document).ready(function() {
+    fetchTemplatesData(function() {
+      displayTemplates();
+    });
+  });
+
+  function fetchTemplatesData(callback) {
+    var language = Cookie.find("taskwolf-documentation-language");
+    let request = new HttpRequest(
+      "https://api.taskwolf.net/v1/modules/all/unauthorized/" + language + "/",
+      "POST", []);
+    request.send(function (status, responseText) {
+      apps = JSON.parse(responseText).modules.sort(entry => 0.5 - Math.random());
+      callback();
+    });
+  }
+
+  function displayTemplates() {
+    document.getElementById("apps-list").innerHTML = "";
+    for (var i = 0; i < apps.length; i++) {
+      var entry = apps[i];
+      if(!(shouldDisplayAppEntry(entry))) {
+        continue;
+      }
+      displayApp(entry.name, entry.logo);
+    }
+  }
+
+  function shouldDisplayAppEntry(entry) {
+    return appsCurrentNameFilter.length === 0 ||
+      entry.name.toLowerCase().includes(appsCurrentNameFilter.toLowerCase());
+  }
+
+  function displayApp(name, logo) {
+    var entryElement = document.createElement("li");
+    var logoElement = document.createElement("img");
+    logoElement.src = "https://taskwolf.net/static/img/applications/" + logo;
+    logoElement.width = 80;
+    logoElement.height = 80;
+    logoElement.classList.add("mb-4");
+    entryElement.appendChild(logoElement);
+    entryElement.appendChild(document.createElement("br"));
+    var nameElement = document.createElement("b");
+    nameElement.innerHTML = name;
+    entryElement.appendChild(nameElement);
+    document.getElementById("apps-list").appendChild(entryElement);
+  }
+
+  document.getElementById("apps-search-input").oninput = function(event) {
+    appsCurrentNameFilter = event.target.value;
+    displayTemplates();
+  };
+</script>

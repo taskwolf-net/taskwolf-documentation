@@ -8,10 +8,6 @@ class HttpRequest {
 
   send(callback) {
     this.headers.push({key: "Content-Type", value: "application/json"});
-    var token = Cookie.find("token");
-    if (token !== null) {
-      this.headers.push({key: "Authorization", value: "Bearer " + token});
-    }
     var whitelistKey = Cookie.find("taskwolf-whitelist-key");
     if (whitelistKey !== null) {
       this.headers.push({key: "WHITELIST-KEY", value: whitelistKey});
