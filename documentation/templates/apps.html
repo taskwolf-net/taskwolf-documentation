@@ -39,6 +39,9 @@
 
   function fetchTemplatesData(callback) {
     var language = Cookie.find("taskwolf-documentation-language");
+    if (language == null) {
+      language = "en";
+    }
     let request = new HttpRequest(
       "https://api.taskwolf.net/v1/modules/all/unauthorized/" + language + "/",
       "POST", []);
