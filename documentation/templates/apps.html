@@ -44,7 +44,7 @@
     }
     let request = new HttpRequest(
       "https://api.taskwolf.net/v1/modules/all/unauthorized/" + language + "/",
-      "POST", []);
+      "GET", []);
     request.send(function (status, responseText) {
       apps = JSON.parse(responseText).modules.sort(entry => 0.5 - Math.random());
       callback();
