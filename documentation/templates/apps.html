@@ -38,12 +38,12 @@
   });
 
   function fetchTemplatesData(callback) {
-    var language = Cookie.find("taskwolf-documentation-language");
+    var language = Cookie.find("dulno-documentation-language");
     if (language == null) {
       language = "en";
     }
     let request = new HttpRequest(
-      "https://api.taskwolf.net/v1/modules/all/unauthorized/" + language + "/",
+      "https://api.dulno.com/v1/modules/all/unauthorized/" + language + "/",
       "GET", []);
     request.send(function (status, responseText) {
       apps = JSON.parse(responseText).modules.sort(entry => 0.5 - Math.random());
@@ -70,7 +70,7 @@
   function displayApp(name, logo) {
     var entryElement = document.createElement("li");
     var logoElement = document.createElement("img");
-    logoElement.src = "https://taskwolf.net/static/img/applications/" + logo;
+    logoElement.src = "https://dulno.com/static/img/applications/" + logo;
     logoElement.width = 80;
     logoElement.height = 80;
     logoElement.classList.add("mb-4");

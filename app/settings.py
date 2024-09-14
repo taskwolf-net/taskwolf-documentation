@@ -45,7 +45,7 @@ MIDDLEWARE = [
   'whitelist.middleware.WhitelistMiddleware',
 ]
 
-CSRF_TRUSTED_ORIGINS = ["https://documentation.taskwolf.net"]
+CSRF_TRUSTED_ORIGINS = ["https://documentation.dulno.com"]
 
 ROOT_URLCONF = 'app.urls'
 

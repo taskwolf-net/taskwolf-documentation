@@ -14,7 +14,7 @@ def documentation_page(function):
   return documentation_page
 
 def applyLanguage(request):
-  language = request.COOKIES.get("taskwolf-documentation-language")
+  language = request.COOKIES.get("dulno-documentation-language")
   if (language is None):
     translation.activate("en")
   translation.activate(language)
