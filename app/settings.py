@@ -117,4 +117,4 @@ LANGUAGES = (
   ('de', 'Deutsch'),
 )
 
-WHITELIST = True
+WHITELIST = False
