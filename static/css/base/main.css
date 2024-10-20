@@ -119,13 +119,26 @@ h1 {
   border: 1px solid #3a3a3a;
   border-radius: 10px;
   padding: 20px;
+  width: 100%;
+}
+
+.documentation-code div {
+  position: relative;
+  display: inline-block;
+  width: min(calc(100% - 50px));
+}
+
+.documentation-code div * {
+  max-width: 100%;
+  word-wrap: break-word;
 }
 
 .documentation-code-copy {
   position: absolute;
   color: white;
   background-color: #272727;
-  right: 20px;
+  top: 10px;
+  right: 10px;
   width: 42px;
   height: 42px;
   border-radius: 5px;
