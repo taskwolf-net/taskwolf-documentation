@@ -18,10 +18,10 @@ msgid "documentation.footer.legal"
 msgstr "LEGAL"
 msgid "documentation.footer.imprint"
 msgstr "Imprint"
-msgid "documentation.footer.terms.of.service"
-msgstr "Terms of Service"
 msgid "documentation.footer.privacy.policy"
-msgstr "Privacy Policy"
+msgstr "Privacy policy"
+msgid "documentation.footer.terms.of.service"
+msgstr "Terms of service"
 
 # PAGE BAR
 msgid "documentation.page.bar.headline"

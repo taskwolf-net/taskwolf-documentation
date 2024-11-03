@@ -16,6 +16,11 @@
   background-color: #202428;
 }
 
+#apps-search-box input::placeholder {
+  color: #828282 !important;
+  -webkit-text-fill-color: #828282;
+}
+
 #apps-search-box input:focus{
   box-shadow: 0 0 0 rgb(255, 255, 255);
 }

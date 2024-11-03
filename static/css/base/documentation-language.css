@@ -1,0 +1,36 @@
+#documentation-languages {
+  position: relative;
+  z-index: 10;
+}
+
+.documentation-language-button {
+  background-color: #2a333b !important;
+  border: none !important;
+}
+
+.documentation-language-button:hover, .documentation-language-button:focus {
+  background-color: #38444f !important;
+}
+
+.documentation-language-flag {
+  width: 50px;
+  height: 28px;
+  border-radius: 5px;
+}
+
+#documentation-languages .dropdown-menu {
+  min-width: auto !important;
+  width: auto !important;
+  padding: 0;
+}
+
+#documentation-languages .dropdown-menu li {
+  width: max-content;
+  height: max-content;
+  padding: 0;
+}
+
+#documentation-languages .dropdown-item {
+  width: max-content;
+  height: max-content;
+}

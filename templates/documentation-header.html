@@ -3,25 +3,10 @@
 <nav id="navbar">
   <button id="page-bar-button" type="button" data-bs-toggle="collapse" data-bs-target="#page-bar" aria-expanded="false" aria-controls="page-bar"></button>
   <div id="navbar-content">
-    <div id="documentation-languages">
-      <input id="documentation-language-en" class="documentation-language-flag" src="https://dulno.com/static/img/languages/en.webp" type="image"/>
-      <input id="documentation-language-de" class="documentation-language-flag" src="https://dulno.com/static/img/languages/de.webp" type="image"/>
-    </div>
+    {% include 'documentation-language.html' %}
   </div>
 </nav>
 <div id="header-space"></div>
-
-<script>
-  document.getElementById("documentation-language-en").onclick = function (event) {
-    Cookie.create("dulno-documentation-language", "en", 60 * 60 * 24 * 365, ".dulno.com");
-    window.location.reload();
-  }
-
-  document.getElementById("documentation-language-de").onclick = function (event) {
-    Cookie.create("dulno-documentation-language", "de", 60 * 60 * 24 * 365, ".dulno.com");
-    window.location.reload();
-  }
-</script>
 
 <script>
   var isPageBarShown;
@@ -50,7 +35,7 @@
     var elements = document.getElementsByClassName('sidebar-influenced');
     for (var i = 0; i < elements.length; i++) {
       if (isPageBarShown && window.innerWidth > 1000) {
-        elements[i].style.marginLeft = '300px';
+        elements[i].style.marginLeft = '220px';
       } else {
         elements[i].style.marginLeft = '0';
       }

@@ -4,26 +4,26 @@
   <div id="page-bar-content">
     <ul class="navbar-nav ml-auto h-100 d-flex align-items-center">
       <li class="mt-4">
-        <a href="/"><img class="nav-link" src="https://dulno.com/static/img/logo-light.webp" width="96x" alt=""></a>
+        <a href="/"><img class="nav-link" src="https://dulno.com/static/img/logo-light.webp" width="80" alt=""></a>
       </li>
       <li class="mt-3">
         <p class="text-center text-secondary mb-0">{% trans 'documentation.page.bar.headline' %}</p>
         <p class="text-center text-secondary">{% trans 'documentation.page.bar.version' %}</p>
       </li>
-      <li class="page-bar-item mt-3">
-        <a href="/overview/" class="page-bar-link nav-link {% if request.path == '/overview/' or request.path == '/' %}page-bar-active{% endif %}" aria-current="page"><span class="page-bar-icon material-symbols-outlined">overview</span><span>{% trans 'documentation.page.bar.overview' %}</span></a>
+      <li class="page-bar-item mt-3 {% if request.path == '/overview/' or request.path == '/' %}page-bar-active{% endif %}">
+        <a href="/overview/" class="page-bar-link nav-link" aria-current="page"><span class="page-bar-icon material-symbols-outlined">overview</span><span>{% trans 'documentation.page.bar.overview' %}</span></a>
       </li>
-      <li class="page-bar-item mt-3">
-        <a href="/change-log/" class="page-bar-link nav-link {% if request.path == '/change-log/' %}page-bar-active{% endif %}" aria-current="page"><span class="page-bar-icon material-symbols-outlined">list</span><span>{% trans 'documentation.page.bar.change.log' %}</span></a>
+      <li class="page-bar-item mt-3 {% if request.path == '/change-log/' %}page-bar-active{% endif %}">
+        <a href="/change-log/" class="page-bar-link nav-link" aria-current="page"><span class="page-bar-icon material-symbols-outlined">list</span><span>{% trans 'documentation.page.bar.change.log' %}</span></a>
       </li>
-      <li class="page-bar-item mt-3">
-        <a href="/apps/" class="page-bar-link nav-link {% if request.path == '/apps/' %}page-bar-active{% endif %}" aria-current="page"><span class="page-bar-icon material-symbols-outlined">apps</span><span>{% trans 'documentation.page.bar.apps' %}</span></a>
+      <li class="page-bar-item mt-3 {% if request.path == '/apps/' %}page-bar-active{% endif %}">
+        <a href="/apps/" class="page-bar-link nav-link" aria-current="page"><span class="page-bar-icon material-symbols-outlined">apps</span><span>{% trans 'documentation.page.bar.apps' %}</span></a>
       </li>
-      <li class="page-bar-item mt-3">
-        <a href="/webhooks/" class="page-bar-link nav-link {% if request.path == '/webhooks/' %}page-bar-active{% endif %}" aria-current="page"><span class="page-bar-icon material-symbols-outlined">webhook</span><span>{% trans 'documentation.page.bar.webhooks' %}</span></a>
+      <li class="page-bar-item mt-3 {% if request.path == '/webhooks/' %}page-bar-active{% endif %}">
+        <a href="/webhooks/" class="page-bar-link nav-link" aria-current="page"><span class="page-bar-icon material-symbols-outlined">webhook</span><span>{% trans 'documentation.page.bar.webhooks' %}</span></a>
       </li>
-      <li class="page-bar-item mt-3">
-        <a href="/glossary/" class="page-bar-link nav-link {% if request.path == '/glossary/' %}page-bar-active{% endif %}" aria-current="page"><span class="page-bar-icon material-symbols-outlined">dictionary</span><span>{% trans 'documentation.page.bar.glossary' %}</span></a>
+      <li class="page-bar-item mt-3 {% if request.path == '/glossary/' %}page-bar-active{% endif %}">
+        <a href="/glossary/" class="page-bar-link nav-link" aria-current="page"><span class="page-bar-icon material-symbols-outlined">dictionary</span><span>{% trans 'documentation.page.bar.glossary' %}</span></a>
       </li>
     </ul>
   </div>

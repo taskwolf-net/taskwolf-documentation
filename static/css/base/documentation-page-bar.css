@@ -1,7 +1,7 @@
 #page-bar {
   position: fixed;
-  width: 300px !important;
-  height: calc(100% - 80px);
+  width: 220px !important;
+  height: calc(100% - 70px);
   transition: 0s;
   z-index: 90;
   overflow-y: auto;
@@ -12,39 +12,43 @@
 
 .page-bar-item {
   width: 90%;
-  border-radius: 10px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  border-radius: 8px;
   transition-duration: 250ms;
   user-select: none;
 }
 
 .page-bar-item:hover {
-  background-color: #4a4a4a;
+  background-color: #3e4348;
 }
 
 .page-bar-link {
   display: flex !important;
   align-items: center;
-  font-size: 22px !important;
+  font-size: 18px !important;
+  padding-top: 4px !important;
+  padding-bottom: 4px !important;
 }
 
 .page-bar-icon {
-  margin-left: 5%;
-  margin-right: 10%;
+  margin-left: 10px;
+  margin-right: 10px;
   width: 35px;
   height: 35px;
-  font-size:35px !important;
-  line-height:35px !important;
+  font-size: 28px !important;
+  line-height: 35px !important;
 }
 
 .page-bar-active {
   border-radius: 10px;
-  background-color: #666666;
+  background-color: #3e4348;
 }
 
 @media(max-height: 700px) {
   .page-bar-item {
-    margin-top: 1%;
-    margin-bottom: 1%;
+    margin-top: 2px;
+    margin-bottom: 2px;
   }
 
   .page-bar-link {
