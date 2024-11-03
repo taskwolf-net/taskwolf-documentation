@@ -1,11 +1,11 @@
 {% load static %}
 {% load i18n %}
 <html lang="en">
-  {% include 'templates/head.html' %}
+  {% include 'head.html' %}
   <body>
-    {% include 'templates/documentation-header.html' %}
-    {% include 'templates/documentation-page-bar.html' %}
-    {% include 'templates/documentation-content-bar.html' %}
+    {% include 'documentation-header.html' %}
+    {% include 'documentation-page-bar.html' %}
+    {% include 'documentation-content-bar.html' %}
     <div class="sidebar-influenced">
       <div class="documentation-page">
         <h1 class="text-center fw-bold mt-5 mb-5">{% trans 'documentation.overview.headline' %}</h1>
@@ -42,6 +42,6 @@
         </div>
       </div>
     </div>
-    {% include 'templates/documentation-footer.html' %}
+    {% include 'documentation-footer.html' %}
   </body>
 </html>

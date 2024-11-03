@@ -11,7 +11,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '***REMOVED***'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 SECURE_CROSS_ORIGIN_OPENER_POLICY = None
@@ -52,7 +52,7 @@ ROOT_URLCONF = 'app.urls'
 TEMPLATES = [
   {
     'BACKEND': 'django.template.backends.django.DjangoTemplates',
-    'DIRS': [BASE_DIR + '/static/'],
+    'DIRS': [BASE_DIR + "/templates/"],
     'APP_DIRS': True,
     'OPTIONS': {
       'context_processors': [
