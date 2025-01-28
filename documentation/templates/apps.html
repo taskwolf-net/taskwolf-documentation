@@ -43,7 +43,7 @@
       language = "en";
     }
     let request = new HttpRequest(
-      "https://api.dulno.com/v1/modules/all/unauthorized/" + language + "/",
+      "/modules/all/unauthorized/" + language + "/",
       "GET", []);
     request.send(function (status, responseText) {
       apps = JSON.parse(responseText).modules.sort(entry => 0.5 - Math.random());

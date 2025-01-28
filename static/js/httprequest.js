@@ -1,4 +1,6 @@
 class HttpRequest {
+  static PREFIX = "https://api.dulno.com/v1";
+
   constructor(url, method, headers, data) {
     this.url = url;
     this.method = method;
@@ -7,14 +9,19 @@ class HttpRequest {
   }
 
   send(callback) {
-    this.headers.push({key: "Content-Type", value: "application/json"});
+    let self = this;
+    if (self.headers === undefined) {
+      self.headers = [];
+    }
+    let headers = [...self.headers];
+    headers.push({key: "Content-Type", value: "application/json"});
     var whitelistKey = Cookie.find("dulno-whitelist-key");
     if (whitelistKey !== null) {
-      this.headers.push({key: "WHITELIST-KEY", value: whitelistKey});
+      self.headers.push({key: "WHITELIST-KEY", value: whitelistKey});
     }
     const xhr = new XMLHttpRequest();
-    xhr.open(this.method, this.url);
-    for (const entry of this.headers) {
+    xhr.open(self.method, HttpRequest.PREFIX + self.url);
+    for (const entry of self.headers) {
       xhr.setRequestHeader(entry.key, entry.value);
     }
     xhr.onload = function (e) {
@@ -23,6 +30,6 @@ class HttpRequest {
     xhr.onerror = function (e) {
       callback(-1, "");
     };
-    xhr.send(JSON.stringify(this.data));
+    xhr.send(JSON.stringify(self.data));
   }
 }

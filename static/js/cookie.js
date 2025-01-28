@@ -1,20 +1,20 @@
-var Cookie = {
+let Cookie = {
   findAll: function () {
-    var pairs = document.cookie.split(";");
-    var cookies = {};
-    for (var i = 0; i < pairs.length; i++){
-      var pair = pairs[i].split("=");
+    let pairs = document.cookie.split(";");
+    let cookies = {};
+    for (let i = 0; i < pairs.length; i++){
+      let pair = pairs[i].split("=");
       cookies[(pair[0]+'').trim()] = unescape(pair.slice(1).join("="));
     }
     return cookies;
   },
 
   find: function (name) {
-    var cookie = null,
+    let cookie = null,
       list = this.findAll();
-    var keys = Object.keys(list);
-    for (var i = 0; i < keys.length; i++) {
-      var key = keys[i];
+    let keys = Object.keys(list);
+    for (let i = 0; i < keys.length; i++) {
+      let key = keys[i];
       if (key === name) {
         cookie = list[key];
       }
@@ -23,21 +23,19 @@ var Cookie = {
   },
 
   create: function (name, value, time) {
-    this.create(name, value, time, "." + location.host);
-  },
-
-  create: function (name, value, time, domain) {
-    var today = new Date(),
+    let today = new Date(),
       offset = (typeof time == "undefined") ? (1000 * 60 * 60 * 24) : (time * 1000),
       expires_at = new Date(today.getTime() + offset);
-    var content = {
+    let content = {
       name: escape(value),
       expires: expires_at.toGMTString(),
       path: "/",
-      domain: domain,
-      secure: true,
+      domain: "." + window.location.hostname,
     };
-    var cookie = Object.keys(content).map(function(key) {
+    if (!window.location.hostname.includes("0.0.0.0")) {
+      content.secure = true;
+    }
+    let cookie = Object.keys(content).map(function(key) {
       return [(key === "name") ? name : key, content[key]].join("=");
     }).join(";");
     document.cookie = cookie;
@@ -46,9 +44,5 @@ var Cookie = {
 
   destroy: function (name) {
     this.create(name, "", -1);
-  },
-
-  destroy: function (name, domain) {
-    this.create(name, "", -1, domain);
   }
 };

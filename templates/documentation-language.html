@@ -4,8 +4,8 @@
     <img id="documentation-language-current" class="documentation-language-flag">
   </button>
   <ul class="dropdown-menu">
-    <li><button id="documentation-language-en" class="btn documentation-language-button"><img class="documentation-language-flag" src="https://dulno.com/static/img/languages/en.webp"></button></li>
-    <li><button id="documentation-language-de" class="btn documentation-language-button"><img class="documentation-language-flag" src="https://dulno.com/static/img/languages/de.webp"></button></li>
+    <li><button id="documentation-language-en" class="btn documentation-language-button"><img class="documentation-language-flag" src="/static/img/languages/en.webp"></button></li>
+    <li><button id="documentation-language-de" class="btn documentation-language-button"><img class="documentation-language-flag" src="/static/img/languages/de.webp"></button></li>
   </ul>
 </div>
 
@@ -17,16 +17,16 @@
     }
     document.getElementById("documentation-language-" + language).classList.add("d-none");
     document.getElementById("documentation-language-current").src =
-      "https://dulno.com/static/img/languages/" + language + ".webp";
+      "/static/img/languages/" + language + ".webp";
   });
 
   document.getElementById("documentation-language-en").onclick = function (event) {
-    Cookie.create("dulno-documentation-language", "en", 60 * 60 * 24 * 365, ".dulno.com");
+    Cookie.create("dulno-documentation-language", "en", 60 * 60 * 24 * 365);
     window.location.reload();
   }
 
   document.getElementById("documentation-language-de").onclick = function (event) {
-    Cookie.create("dulno-documentation-language", "de", 60 * 60 * 24 * 365, ".dulno.com");
+    Cookie.create("dulno-documentation-language", "de", 60 * 60 * 24 * 365);
     window.location.reload();
   }
 </script>
