@@ -4,6 +4,7 @@ stages:
 
 variables:
   DOCKER_IMAGE: "dulno-documentation"
+  DOCKER_STATIC_IMAGE: "dulno-documentation-static"
   KUBERNETES_RESOURCE: "deployment/dulno-documentation-deployment"
 
 publish:
@@ -19,10 +20,12 @@ publish:
     - echo $DOCKER_PASSWORD | docker login -u $DOCKER_USERNAME --password-stdin $DOCKER_REGISTRY
     - docker build -t $DOCKER_REGISTRY/$DOCKER_IMAGE:latest .
     - docker push $DOCKER_REGISTRY/$DOCKER_IMAGE:latest
+    - docker buildx build -t $DOCKER_REGISTRY/$DOCKER_STATIC_IMAGE:latest -f nginx/Dockerfile .
+    - docker push $DOCKER_REGISTRY/$DOCKER_STATIC_IMAGE:latest
   only:
     - master
 
-deploy:
+deploy_documentation:
   stage: deploy
   image:
     name: bitnami/kubectl:latest
@@ -34,5 +37,13 @@ deploy:
     - echo "$KUBERNETES_CONFIGURATION" > ~/.kube/config
   script:
     - kubectl rollout restart $KUBERNETES_RESOURCE
+  only:
+    - master
+
+deploy_nginx:
+  stage: deploy
+  trigger:
+    project: $NGINX_PIPELINE_PROJECT
+    branch: $NGINX_PIPELINE_BRANCH
   only:
     - master
