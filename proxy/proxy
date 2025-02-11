@@ -1,0 +1,15 @@
+server {
+  server_name documentation.dulno.com;
+
+  location /static/ {
+    alias /home/dulno/documentation/static/;
+  }
+
+  location / {
+    proxy_pass http://10.96.0.8;
+    proxy_set_header Host $http_host;
+  }
+
+  listen 443;
+  server_tokens off;
+}
