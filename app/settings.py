@@ -10,13 +10,20 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = '***REMOVED***'
 
-# Whether the project should be configured in development mode
-DEVELOPMENT = False
+# Whether the project should be configured in productive, staging or local mode
+# Possible values: PRODUCTIVE, STAGING, LOCAL
+ENVIRONMENT = os.getenv('DULNO_ENVIRONMENT', 'LOCAL')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = DEVELOPMENT
 
-ALLOWED_HOSTS = ['documentation.dulno.com', '0.0.0.0']
+if ENVIRONMENT == 'PRODUCTIVE':
+  ALLOWED_HOSTS = ['documentation.dulno.com', '0.0.0.0']
+elif ENVIRONMENT == 'STAGING':
+  ALLOWED_HOSTS = ['10.96.0.16', '0.0.0.0']
+elif ENVIRONMENT == 'LOCAL':
+  ALLOWED_HOSTS = ['0.0.0.0']
+
 SECURE_CROSS_ORIGIN_OPENER_POLICY = None
 
 BACKEND_ENDPOINT = 'http://10.96.0.4'
@@ -64,6 +71,7 @@ TEMPLATES = [
         'django.template.context_processors.request',
         'django.contrib.auth.context_processors.auth',
         'django.contrib.messages.context_processors.messages',
+        'documentation.context_processors.domain'
       ],
     },
   },

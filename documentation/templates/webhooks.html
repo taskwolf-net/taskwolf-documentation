@@ -30,7 +30,7 @@
           <div class="documentation-code mt-5 mb-5">
             <button id="webhook-trigger-request-copy" class="documentation-code-copy"><i class="fa-solid fa-copy"></i></button>
             <div>
-              <label class="me-4">POST</label><label>https://api.dulno.com/v1/webhook/trigger/</label><label class="text-warning">&lt;ID&gt;</label><label>/</label><label class="ms-4 text-secondary">HTTP/1.1</label><br><br>
+              <label class="me-4">POST</label><label>https://api.{{domain}}/v1/webhook/trigger/</label><label class="text-warning">&lt;ID&gt;</label><label>/</label><label class="ms-4 text-secondary">HTTP/1.1</label><br><br>
             </div>
             <div>
               <label class="text-info">Authorization:</label> <label>Bearer</label> <label class="text-warning">&lt;Key&gt;</label><br><br>
@@ -43,7 +43,7 @@
           <div class="documentation-code mt-5 mb-5">
             <button id="webhook-trigger-example-copy" class="documentation-code-copy"><i class="fa-solid fa-copy"></i></button>
             <div>
-              <label class="me-4">POST</label><label>https://api.dulno.com/v1/webhook/trigger/pnrufmqxqcbcbrvlkcuhijsurnvchqxl/</label><label class="ms-4 text-secondary">HTTP/1.1</label><br><br>
+              <label class="me-4">POST</label><label>https://api.{{domain}}/v1/webhook/trigger/pnrufmqxqcbcbrvlkcuhijsurnvchqxl/</label><label class="ms-4 text-secondary">HTTP/1.1</label><br><br>
             </div>
             <div>
               <label class="text-info">Authorization:</label> <label>Bearer hutrykovffljukxeabtipbjsltkoaaua</label><br>
@@ -87,10 +87,10 @@
 
 <script>
   document.getElementById("webhook-trigger-request-copy").onclick = function(event) {
-    navigator.clipboard.writeText('curl -X POST -H "Authorization: Bearer <Key>" -d "<Payload>" https://api.dulno.com/v1/webhook/trigger/<ID>/');
+    navigator.clipboard.writeText('curl -X POST -H "Authorization: Bearer <Key>" -d "<Payload>" https://api.' + "{{domain}}" + '/v1/webhook/trigger/<ID>/');
   }
 
   document.getElementById("webhook-trigger-example-copy").onclick = function(event) {
-    navigator.clipboard.writeText('curl -X POST -H "Authorization: Bearer hutrykovffljukxeabtipbjsltkoaaua" -H "Content-Type: text/plain" -d "Some information" https://api.dulno.com/v1/webhook/trigger/pnrufmqxqcbcbrvlkcuhijsurnvchqxl/');
+    navigator.clipboard.writeText('curl -X POST -H "Authorization: Bearer hutrykovffljukxeabtipbjsltkoaaua" -H "Content-Type: text/plain" -d "Some information" https://api.' + "{{domain}}" + '/v1/webhook/trigger/pnrufmqxqcbcbrvlkcuhijsurnvchqxl/');
   }
 </script>

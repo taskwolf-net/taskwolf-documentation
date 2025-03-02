@@ -17,11 +17,18 @@
       </div>
       <div class="documentation-footer-row">
         <h4 class="documentation-footer-row-headline">{% trans 'documentation.footer.legal' %}</h4>
-        <a href="https://dulno.com/imprint/">{% trans 'documentation.footer.imprint' %}</a><br>
-        <a href="https://dulno.com/privacy-policy/">{% trans 'documentation.footer.privacy.policy' %}</a><br>
-        <a href="https://dulno.com/terms-of-service/">{% trans 'documentation.footer.terms.of.service' %}</a><br>
+        <a href="https://{{domain}}/imprint/">{% trans 'documentation.footer.imprint' %}</a><br>
+        <a href="https://{{domain}}/privacy-policy/">{% trans 'documentation.footer.privacy.policy' %}</a><br>
+        <a href="https://{{domain}}/terms-of-service/">{% trans 'documentation.footer.terms.of.service' %}</a><br>
       </div>
     </div>
-    <h5 id="documentation-footer-copyright">© 2024 Dulno.com</h5>
+    <h5 id="documentation-footer-copyright">© Dulno</h5>
   </div>
 </div>
+
+<script>
+  $(document).ready(function() {
+    document.getElementById("documentation-footer-copyright").innerHTML =
+      "© " + new Date().getFullYear() + " Dulno";
+  });
+</script>
