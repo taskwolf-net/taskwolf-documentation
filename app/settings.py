@@ -15,7 +15,7 @@ SECRET_KEY = '***REMOVED***'
 ENVIRONMENT = os.getenv('DULNO_ENVIRONMENT', 'LOCAL')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = DEVELOPMENT
+DEBUG = ENVIRONMENT == 'STAGING' or ENVIRONMENT == 'LOCAL'
 
 if ENVIRONMENT == 'PRODUCTIVE':
   ALLOWED_HOSTS = ['documentation.dulno.com', '0.0.0.0']
