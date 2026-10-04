@@ -15,7 +15,7 @@ class HttpRequest {
     }
     let headers = [...self.headers];
     headers.push({key: "Content-Type", value: "application/json"});
-    var whitelistKey = Cookie.find("dulno-whitelist-key");
+    var whitelistKey = Cookie.find("taskwolf-whitelist-key");
     if (whitelistKey !== null) {
       self.headers.push({key: "WHITELIST-KEY", value: whitelistKey});
     }

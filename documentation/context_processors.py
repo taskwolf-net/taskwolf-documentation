@@ -2,17 +2,17 @@ from app.settings import ENVIRONMENT
 
 def domain(request):
   if ENVIRONMENT == 'PRODUCTIVE':
-    domain = 'dulno.com'
-    request_prefix = 'https://api.dulno.com/v1'
-    public_endpoint = 'https://api.dulno.com'
+    domain = 'taskwolf.net'
+    request_prefix = 'https://api.taskwolf.net/v1'
+    public_endpoint = 'https://api.taskwolf.net'
   elif ENVIRONMENT == 'STAGING':
-    domain = 'dulno.dev'
-    request_prefix = 'https://api.dulno.dev/v1'
-    public_endpoint = 'https://pub.dulno.dev'
+    domain = 'taskwolf.dev'
+    request_prefix = 'https://api.taskwolf.dev/v1'
+    public_endpoint = 'https://pub.taskwolf.dev'
   elif ENVIRONMENT == 'LOCAL':
-    domain = 'dulno.dev'
+    domain = 'taskwolf.dev'
     request_prefix = 'http://10.96.0.4/v1'
-    public_endpoint = 'https://pub.dulno.dev'
+    public_endpoint = 'https://pub.taskwolf.dev'
   return {
     'domain': domain,
     'request_prefix': request_prefix,

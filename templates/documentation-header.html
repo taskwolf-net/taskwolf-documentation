@@ -12,10 +12,10 @@
   var isPageBarShown;
 
   window.addEventListener("load", function() {
-    if (sessionStorage.getItem("dulno-documentation-page-bar") === null) {
-      sessionStorage.setItem("dulno-documentation-page-bar", "true");
+    if (sessionStorage.getItem("taskwolf-documentation-page-bar") === null) {
+      sessionStorage.setItem("taskwolf-documentation-page-bar", "true");
     }
-    var pageBarSetting = sessionStorage.getItem("dulno-documentation-page-bar").toLowerCase() === "true";
+    var pageBarSetting = sessionStorage.getItem("taskwolf-documentation-page-bar").toLowerCase() === "true";
     isPageBarShown = window.innerWidth > 575 && pageBarSetting;
     if (isPageBarShown) {
       document.getElementById("page-bar").classList.add("show");
@@ -26,7 +26,7 @@
 
   document.getElementById('page-bar-button').onclick = function() {
     isPageBarShown = !isPageBarShown;
-    sessionStorage.setItem("dulno-documentation-page-bar", isPageBarShown);
+    sessionStorage.setItem("taskwolf-documentation-page-bar", isPageBarShown);
     updatePageBarSpacing();
     updatePageBarButtonIcon();
   };

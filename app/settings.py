@@ -12,13 +12,13 @@ SECRET_KEY = os.environ['DJANGO_SECRET_KEY']
 
 # Whether the project should be configured in productive, staging or local mode
 # Possible values: PRODUCTIVE, STAGING, LOCAL
-ENVIRONMENT = os.getenv('DULNO_ENVIRONMENT', 'LOCAL')
+ENVIRONMENT = os.getenv('TASKWOLF_ENVIRONMENT', 'LOCAL')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = ENVIRONMENT == 'STAGING' or ENVIRONMENT == 'LOCAL'
 
 if ENVIRONMENT == 'PRODUCTIVE':
-  ALLOWED_HOSTS = ['documentation.dulno.com', '0.0.0.0']
+  ALLOWED_HOSTS = ['documentation.taskwolf.net', '0.0.0.0']
 elif ENVIRONMENT == 'STAGING':
   ALLOWED_HOSTS = ['10.96.0.16', '0.0.0.0']
 elif ENVIRONMENT == 'LOCAL':
@@ -56,7 +56,7 @@ MIDDLEWARE = [
   'whitelist.middleware.WhitelistMiddleware',
 ]
 
-CSRF_TRUSTED_ORIGINS = ["https://documentation.dulno.com"]
+CSRF_TRUSTED_ORIGINS = ["https://documentation.taskwolf.net"]
 
 ROOT_URLCONF = 'app.urls'
 

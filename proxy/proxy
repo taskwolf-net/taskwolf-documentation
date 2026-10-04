@@ -2,7 +2,7 @@ server {
   server_name ${SERVER_NAME};
 
   location /static/ {
-    alias /home/dulno/documentation/static/;
+    alias /home/taskwolf/documentation/static/;
   }
 
   location / {
